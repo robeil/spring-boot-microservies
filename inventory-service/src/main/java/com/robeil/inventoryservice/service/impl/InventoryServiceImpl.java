@@ -22,7 +22,7 @@ public class InventoryServiceImpl implements InventoryService {
                 .stream()
                 .filter(order -> order.getSkuCode().equals(skuCode) && order.getQuantity() >= quantity)
                 .findAny();
-     return allOrder.isEmpty() ? true : false;
+     return allOrder.isEmpty() ? false : true;
        // return repository.existsBySkuCodeAndQuantityIsGreaterThanEqual(skuCode,quantity);
     }
 }
